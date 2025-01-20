@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Operation Phoenix Dawn - Games</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/content/favicon/favicon1.ico" />
+  <link rel="manifest" href="/static/manifest.json">
+  <script src="/v1.2/js/game.js" defer></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RW5XLDCNXJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-RW5XLDCNXJ');
+</script>
+
+<body>
+  <div id="nav">
+    <span style="font-size:30px;cursor:pointer" onclick="openMenu()">&#9776; Menu
+    </span>
+  </div>
+  <div id="menu">
+    <div id="closebtn">
+      <span style="font-size:36px;cursor:pointer" onclick="closeMenu()">&times; Close
+      </span>
+    </div>
+    <div id="menu-items">
+      <a href="/" class="menu-item">Home</a>
+      <a href="/games" class="menu-item">Games</a>
+      <a href="/html-games" class="menu-item">HTML Games</a>
+      <a href="/TOS/" class="menu-item">TOS</a>
+      <a href="/join-us" class="menu-item">Join Us</a>
+      <a href="/hacks" class="menu-item">Hacks</a>
+    </div>
+    <div id="menu-background-pattern"></div>
+  </div>
+  <h1>Games</h1>
+  <div class="button-wrapper">
+    <button id="create" class="console-button">Open in about:blank</button>
+  </div>
+  </div>
+  <script>
+    var urlObj = new window.URL(window.location.href);
+    document.getElementById("create").onclick = function () {
+      win = window.open();
+      win.document.body.style.margin = "0";
+      win.document.body.style.height = "100vh";
+      var iframe = win.document.createElement("iframe");
+      iframe.style.border = "none";
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.margin = "0";
+      iframe.referrerpolicy = "no-referrer";
+      iframe.allow = "fullscreen";
+      iframe.src = "https://operation-phoenix-dawn.github.io/games";
+      win.document.body.appendChild(iframe);
+    };
+  </script>
+  <div class="search-wrapper">
+    <input type="search" id="search" data-search="" placeholder="Search for a game...">
+  </div>
+  <div class="user-cards" data-user-cards-container>
+    <template data-user-template>
+      <a class="card">
+        <div class="header" data-header></div>
+      </a>
+    </template>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

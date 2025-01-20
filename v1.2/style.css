@@ -1,0 +1,73 @@
+:root {
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+  
+    --bg: rgb(20, 20, 20);
+}
+
+body {
+    background-color: var(--bg);
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient( rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow-x: hidden;
+}
+
+.search-wrapper{
+  margin-left: 15%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+input[type=text] {
+  width: 30%;
+  -webkit-transition: width 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 70%;
+}
+
+.user-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: .5rem;
+  margin-top: 2rem;
+}
+.card{
+  cursor: pointer;
+  padding: 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.card:hover {
+  background-color: white;
+  padding: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.card .header{
+  font-size: 1.5rem;
+  margin-bottom: .25rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.card > .body{
+  font-size: 4rem;
+  color: #777;
+}
+.hide {
+  display: none;
+}

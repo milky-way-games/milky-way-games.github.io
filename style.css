@@ -1,0 +1,206 @@
+:root {
+  --border: rgb(3, 169, 244);
+
+  --g1: rgb(98, 0, 244);
+  --g2: rgb(236, 64, 122);
+  --g3: rgb(253, 216, 53);
+
+  --bg: rgb(20, 20, 20);
+}
+
+body {
+  background-color: var(--bg);
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient( rgba(255, 255, 255, 0.1) 9%, transparent 9%); 
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+.siteInfo {
+  margin: auto;
+  aspect-ratio: 1/1.6;
+  border: 0.5vmin solid var(--border);
+  cursor: pointer;
+  position: relative;
+  width: 56vmin;
+  z-index: 1;
+}
+
+.siteInfo:before {
+  background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    var(--g1) 66%,
+    var(--g2) 83.5%,
+    var(--g3) 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: "";
+  height: 100%;
+  left: 0px;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  transition: background-position 350ms ease;
+  width: 100%;
+  z-index: 1;
+}
+
+.siteInfo:hover:before {
+  background-position: 100% 100%;
+  transform: scale(1.08, 1.03);
+}
+
+.siteInfo-content {
+  background: radial-gradient( 
+    rgba(255, 255, 255, 0.1) 9%,
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+  height: calc(100% - 10vmin);
+  padding: 5vmin;
+  position: relative;
+  transition: background-position 350ms ease;
+  width: calc(100% - 10vmin);
+  z-index: 2;
+}
+
+.siteInfo:hover > .siteInfo-content {
+  background-position: -10% 0%;
+}
+
+.siteInfo:hover > .siteInfo-content > .card-subtitle .card-subtitle-word {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: opacity 0ms, transform 200ms cubic-bezier(.90, .6, .15, .90);
+}
+
+.card-title,
+.card-subtitle {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.card-title {
+  font-size: 6vmin;
+}
+
+.card-subtitle {
+  font-size: 3vmin;
+  margin-top: 2vmin;
+}
+
+.card-subtitle-word {
+  display: inline-block;
+  margin: 0vmin 0.3vmin;
+  opacity: 0;
+  position: relative;
+  transform: translateY(40%);
+  transition: none;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: "Ibarra Real Nova", serif;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: "Ibarra Real Nova", serif;
+  text-align: center;
+}
+
+#menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  background-color: var(--bg);
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  transition: cubic-bezier(0.6, 0, 0.4, 1);
+  transition-duration: 2s;
+}
+
+#nav {
+  right: 25px;
+  color: white;
+  z-index: 0;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 45px;
+}
+
+#closebtn {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  z-index:9
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 48rem);
+  position: relative;
+  z-index: 4;
+}
+
+#menu-items:hover>.menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover>.menu-item:hover {
+  opacity: 1;
+}
+
+.menu-item {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-family: "Ibarra Real Nova", serif;
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  transition: opacity 400ms ease;
+}
+
+#menu-background-pattern {
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient( rgba(255, 255, 255, 0.1) 9%, transparent 9%);
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+  transition: opacity 800ms ease, background-size 800ms ease;
+}
+
+#menu-items:hover~#menu-background-pattern {
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+
+
