@@ -8,4 +8,4 @@ This is a little game site on the internet.
 2. Go to https://milky-way-games.github.io/games/ and start playing :)
 
 ## Demo
-(Demo)[https://milky-way-games.github.io/games/]
+[Demo](https://milky-way-games.github.io/games/)
